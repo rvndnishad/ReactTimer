@@ -15,13 +15,11 @@ var Timer = React.createClass({
         case 'started':
         this.startTimer();
         break;
+        case 'stopped':
+        this.setState({count:0});
         case 'paused':
         clearInterval(this.timer);
-        break;
-        case 'stopped':
-        clearInterval(this.timer);
         this.timer = undefined;
-        this.setState({count:0});
         break;
       }
     }
